@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a4c50ec59f03620fe9f42b03460a7b16 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="index.html" class="active">Map</a>
+  <a href="about.html">About</a>
+  <a href="curation.html">Curation</a>
+  <a href="author.html">Author</a>
+</nav>
+
+    
+    
+<div style="position: fixed; bottom: 30px; right: 20px; z-index: 9999;
+            background: rgba(255,255,255,0.9); padding: 10px 15px;
+            border-radius: 10px; font-size: 0.85rem; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+    <b>Migration traces</b><br>
+    <i style="color:#c44536;">—</i> Southern origin route (2000 BCE–500 CE)<br>
+    <i style="color:#e68a2e;">—</i> Inland & river routes (0–1500 CE)<br>
+    <i style="color:#2a6f8f;">—</i> Coastal / fjord routes (800–1800 CE)<br>
+    <i style="color:#5e4b3c;">—</i> Mountain & reindeer paths (medieval–present)<br>
+    <i style="color:#d1495b;">—</i> Atlantic coast & Kola (varied)<br>
+    <span style="font-size:0.8rem;">● Click markers for details</span>
+</div>
+    
+            <div class="folium-map" id="map_a4c50ec59f03620fe9f42b03460a7b16" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a4c50ec59f03620fe9f42b03460a7b16 = L.map(
+                "map_a4c50ec59f03620fe9f42b03460a7b16",
+                {
+                    center: [65.5, 17.5],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+
+            
+
+        
+    
+            var tile_layer_30c09dade20ee06b56ca510595ca646e = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_30c09dade20ee06b56ca510595ca646e.addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+            var poly_line_3d5e3832d3b7bc809c0ed88566a3988c = L.polyline(
+                [[59.8, 17.6], [60.6, 15.6], [62.5, 13.8], [63.5, 11.8], [64.8, 12.1]],
+                {"bubblingMouseEvents": true, "color": "#c44536", "dashArray": "6 8", "dashOffset": null, "fill": false, "fillColor": "#c44536", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+            poly_line_3d5e3832d3b7bc809c0ed88566a3988c.bindTooltip(
+                `<div>
+                     1. Uppland–Dalarna–Trøndelag corridor
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_223b8a815ae417d60655eadfca8a97a3 = L.circleMarker(
+                [59.8, 17.6],
+                {"bubblingMouseEvents": true, "color": "#c44536", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c44536", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_0d283d211b88b76ac67d622d2afa5394 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b4ed79c9fae85dd260684d3e402a61bb = $(`<div id="html_b4ed79c9fae85dd260684d3e402a61bb" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Uppland</h4>             <b>Period:</b> c. 2000–1500 BCE<br>             <b>Lifestyle adaptation:</b> Forest hunting, fishing, early reindeer domestication<br>             <b>Why Sámi moved here:</b> Post‑glacial expansion into forested river valleys rich in game and fish; no single historical event documented.<br>             <b>Interaction with Nordic people:</b> Early contact with Germanic tribes; limited written records, likely sporadic trade and occasional conflict.         </div>         </div>`)[0];
+                popup_0d283d211b88b76ac67d622d2afa5394.setContent(html_b4ed79c9fae85dd260684d3e402a61bb);
+            
+        
+
+        circle_marker_223b8a815ae417d60655eadfca8a97a3.bindPopup(popup_0d283d211b88b76ac67d622d2afa5394)
+        ;
+
+        
+    
+    
+            circle_marker_223b8a815ae417d60655eadfca8a97a3.bindTooltip(
+                `<div>
+                     Uppland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2f766962c3f06287b5f0760d10253741 = L.circleMarker(
+                [62.5, 13.8],
+                {"bubblingMouseEvents": true, "color": "#c44536", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c44536", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_293c6ada574130a88b979ad03ce9f39c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_067ab4abf4a51e8210f319a1eacf10d8 = $(`<div id="html_067ab4abf4a51e8210f319a1eacf10d8" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Härjedalen</h4>             <b>Period:</b> c. 1000 BCE–500 CE<br>             <b>Lifestyle adaptation:</b> Inland hunting, trapping, seasonal fishing camps<br>             <b>Why Sámi moved here:</b> Abundant wild reindeer and fur‑bearing animals; seasonal movement to follow prey.<br>             <b>Interaction with Nordic people:</b> Gradual Norse settlement began around 1000 CE; Sámi traded furs and meat for iron and textiles.         </div>         </div>`)[0];
+                popup_293c6ada574130a88b979ad03ce9f39c.setContent(html_067ab4abf4a51e8210f319a1eacf10d8);
+            
+        
+
+        circle_marker_2f766962c3f06287b5f0760d10253741.bindPopup(popup_293c6ada574130a88b979ad03ce9f39c)
+        ;
+
+        
+    
+    
+            circle_marker_2f766962c3f06287b5f0760d10253741.bindTooltip(
+                `<div>
+                     Härjedalen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f64870bbb0687604d827af209701f154 = L.circleMarker(
+                [64.8, 12.1],
+                {"bubblingMouseEvents": true, "color": "#c44536", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c44536", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_556c7ef700a69f9ed0dd9538670d4136 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_de560b7ed8d4f404b1a1315cc26be656 = $(`<div id="html_de560b7ed8d4f404b1a1315cc26be656" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Northern Trøndelag</h4>             <b>Period:</b> c. 500–1000 CE<br>             <b>Lifestyle adaptation:</b> Semi‑nomadic reindeer pastoralism, mountain summer camps<br>             <b>Why Sámi moved here:</b> Mountain pastures for reindeer and access to trading posts along the coast.<br>             <b>Interaction with Nordic people:</b> Regular trade with Norse farmers and chieftains; Sámi often paid tribute (finnekatt) to Norse kings.         </div>         </div>`)[0];
+                popup_556c7ef700a69f9ed0dd9538670d4136.setContent(html_de560b7ed8d4f404b1a1315cc26be656);
+            
+        
+
+        circle_marker_f64870bbb0687604d827af209701f154.bindPopup(popup_556c7ef700a69f9ed0dd9538670d4136)
+        ;
+
+        
+    
+    
+            circle_marker_f64870bbb0687604d827af209701f154.bindTooltip(
+                `<div>
+                     Northern Trøndelag
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_603e9da67c4e5dd2875f892c9afe8193 = L.polyline(
+                [[59.3, 17.0], [60.9, 14.7], [62.8, 14.4], [64.0, 13.5], [65.3, 13.4], [66.8, 13.8]],
+                {"bubblingMouseEvents": true, "color": "#e68a2e", "dashArray": "6 8", "dashOffset": null, "fill": false, "fillColor": "#e68a2e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+            poly_line_603e9da67c4e5dd2875f892c9afe8193.bindTooltip(
+                `<div>
+                     2. Mälaren valley–Jämtland–Nordland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c2c98cf65e2c238ceb9d06804b5d95c6 = L.circleMarker(
+                [60.9, 14.7],
+                {"bubblingMouseEvents": true, "color": "#e68a2e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e68a2e", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_c7bf5d584ec21b4a0c1bd5ae254df9f6 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_4c3a0b3af1f3f23f7f094e4bf9cf53b6 = $(`<div id="html_4c3a0b3af1f3f23f7f094e4bf9cf53b6" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Värmland/Dalarna border</h4>             <b>Period:</b> c. 1500–1000 BCE<br>             <b>Lifestyle adaptation:</b> Forest‑river fishing, elk hunting<br>             <b>Why Sámi moved here:</b> Rich river systems and dense forests provided reliable food sources.<br>             <b>Interaction with Nordic people:</b> Little direct contact with agricultural communities; occasional exchange of furs for Baltic amber.         </div>         </div>`)[0];
+                popup_c7bf5d584ec21b4a0c1bd5ae254df9f6.setContent(html_4c3a0b3af1f3f23f7f094e4bf9cf53b6);
+            
+        
+
+        circle_marker_c2c98cf65e2c238ceb9d06804b5d95c6.bindPopup(popup_c7bf5d584ec21b4a0c1bd5ae254df9f6)
+        ;
+
+        
+    
+    
+            circle_marker_c2c98cf65e2c238ceb9d06804b5d95c6.bindTooltip(
+                `<div>
+                     Värmland/Dalarna border
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4e0fc7a9d8a18adae8659f03ad3b9d97 = L.circleMarker(
+                [65.3, 13.4],
+                {"bubblingMouseEvents": true, "color": "#e68a2e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e68a2e", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_1dfb747428b1bf264ddf7ae107a8e3be = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_44ad507f31b9647a18d0b73058dce24a = $(`<div id="html_44ad507f31b9647a18d0b73058dce24a" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Southern Nordland</h4>             <b>Period:</b> c. 1000–1500 CE<br>             <b>Lifestyle adaptation:</b> Coastal Sami (sjøsame) – fishing, some farming, boat building<br>             <b>Why Sámi moved here:</b> Access to rich Atlantic cod and herring fisheries; sheltered fjords for settlement.<br>             <b>Interaction with Nordic people:</b> Close economic ties with Norse fishermen; Sámi often hired as boat builders and guides; intermarriage occurred.         </div>         </div>`)[0];
+                popup_1dfb747428b1bf264ddf7ae107a8e3be.setContent(html_44ad507f31b9647a18d0b73058dce24a);
+            
+        
+
+        circle_marker_4e0fc7a9d8a18adae8659f03ad3b9d97.bindPopup(popup_1dfb747428b1bf264ddf7ae107a8e3be)
+        ;
+
+        
+    
+    
+            circle_marker_4e0fc7a9d8a18adae8659f03ad3b9d97.bindTooltip(
+                `<div>
+                     Southern Nordland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a1b49b03555a850d10f5930e9d70c8cf = L.circleMarker(
+                [66.8, 13.8],
+                {"bubblingMouseEvents": true, "color": "#e68a2e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e68a2e", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_3c4e066237c5724609e853fb53cf5c8f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ec19d88a9f00a5f88affc7e31c0697c9 = $(`<div id="html_ec19d88a9f00a5f88affc7e31c0697c9" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Nordland coast</h4>             <b>Period:</b> c. 1500–present<br>             <b>Lifestyle adaptation:</b> Arctic coastal fishing, seasonal reindeer herding<br>             <b>Why Sámi moved here:</b> Continued reliance on marine resources and reindeer summer pastures.<br>             <b>Interaction with Nordic people:</b> From 1600s, Norwegian taxation and Christian mission increased; Sámi maintained distinct identity but adapted to market economy.         </div>         </div>`)[0];
+                popup_3c4e066237c5724609e853fb53cf5c8f.setContent(html_ec19d88a9f00a5f88affc7e31c0697c9);
+            
+        
+
+        circle_marker_a1b49b03555a850d10f5930e9d70c8cf.bindPopup(popup_3c4e066237c5724609e853fb53cf5c8f)
+        ;
+
+        
+    
+    
+            circle_marker_a1b49b03555a850d10f5930e9d70c8cf.bindTooltip(
+                `<div>
+                     Nordland coast
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_c8e1641dc77cd30d8898ad130d43039c = L.polyline(
+                [[61.2, 21.5], [62.8, 22.8], [64.2, 24.3], [65.4, 25.3], [66.2, 26.3], [67.0, 26.8]],
+                {"bubblingMouseEvents": true, "color": "#2a6f8f", "dashArray": "6 8", "dashOffset": null, "fill": false, "fillColor": "#2a6f8f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+            poly_line_c8e1641dc77cd30d8898ad130d43039c.bindTooltip(
+                `<div>
+                     3. Gulf of Bothnia route (Ostrobothnia–Lapland)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_03967a0017ccc97772dde3705d22b724 = L.circleMarker(
+                [62.8, 22.8],
+                {"bubblingMouseEvents": true, "color": "#2a6f8f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a6f8f", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_a937373c324fd3c29261ac6eb580d8d0 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7c417a4d5865b18f13f830e8bc607d66 = $(`<div id="html_7c417a4d5865b18f13f830e8bc607d66" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Ostrobothnia</h4>             <b>Period:</b> c. 1000 BCE–500 CE<br>             <b>Lifestyle adaptation:</b> River fishing, seal hunting, small‑scale reindeer herding<br>             <b>Why Sámi moved here:</b> Productive river mouths and seal colonies; gradually pushed north by Finnish settlement.<br>             <b>Interaction with Nordic people:</b> Early Finnish (Kven) settlers arrived around 1000 CE; Sámi traded fish and furs, but land disputes increased.         </div>         </div>`)[0];
+                popup_a937373c324fd3c29261ac6eb580d8d0.setContent(html_7c417a4d5865b18f13f830e8bc607d66);
+            
+        
+
+        circle_marker_03967a0017ccc97772dde3705d22b724.bindPopup(popup_a937373c324fd3c29261ac6eb580d8d0)
+        ;
+
+        
+    
+    
+            circle_marker_03967a0017ccc97772dde3705d22b724.bindTooltip(
+                `<div>
+                     Ostrobothnia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f58f50a8419ba393732aeb04f9955d18 = L.circleMarker(
+                [65.4, 25.3],
+                {"bubblingMouseEvents": true, "color": "#2a6f8f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a6f8f", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_9db133c0588dd2237fb567fd4b2db259 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_127bb809319a1fdd48e0988e308a8c17 = $(`<div id="html_127bb809319a1fdd48e0988e308a8c17" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Ii / Kemi river</h4>             <b>Period:</b> c. 500–1300 CE<br>             <b>Lifestyle adaptation:</b> River‑based Sámi, salmon fishing, forest reindeer hunting<br>             <b>Why Sámi moved here:</b> Abundant salmon runs and forest reindeer; river provided transport for trade.<br>             <b>Interaction with Nordic people:</b> Taxation by Swedish and Finnish authorities began; Sámi participated in seasonal markets at river mouths.         </div>         </div>`)[0];
+                popup_9db133c0588dd2237fb567fd4b2db259.setContent(html_127bb809319a1fdd48e0988e308a8c17);
+            
+        
+
+        circle_marker_f58f50a8419ba393732aeb04f9955d18.bindPopup(popup_9db133c0588dd2237fb567fd4b2db259)
+        ;
+
+        
+    
+    
+            circle_marker_f58f50a8419ba393732aeb04f9955d18.bindTooltip(
+                `<div>
+                     Ii / Kemi river
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_71605c452f59fbbab11e9b50c5452ddf = L.circleMarker(
+                [67.0, 26.8],
+                {"bubblingMouseEvents": true, "color": "#2a6f8f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a6f8f", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_4dedfbf0eefa36f884e16757bb2a89be = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6f266ad92cc639db8cd5ffc009cdfa79 = $(`<div id="html_6f266ad92cc639db8cd5ffc009cdfa79" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Sodankylä</h4>             <b>Period:</b> c. 1300–present<br>             <b>Lifestyle adaptation:</b> Reindeer pastoralism, winter villages, market trade<br>             <b>Why Sámi moved here:</b> Large grazing areas for reindeer; winter village sites became focal points for trade and social gatherings.<br>             <b>Interaction with Nordic people:</b> Sámi became integrated into Swedish/Finnish taxation (Lappmark system); Christian missionaries active from 1600s.         </div>         </div>`)[0];
+                popup_4dedfbf0eefa36f884e16757bb2a89be.setContent(html_6f266ad92cc639db8cd5ffc009cdfa79);
+            
+        
+
+        circle_marker_71605c452f59fbbab11e9b50c5452ddf.bindPopup(popup_4dedfbf0eefa36f884e16757bb2a89be)
+        ;
+
+        
+    
+    
+            circle_marker_71605c452f59fbbab11e9b50c5452ddf.bindTooltip(
+                `<div>
+                     Sodankylä
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_f153aae75f1ca7804321d8be62f566e3 = L.polyline(
+                [[63.0, 27.7], [64.1, 28.7], [65.2, 29.2], [66.3, 29.5], [67.8, 29.2], [68.5, 28.5]],
+                {"bubblingMouseEvents": true, "color": "#5e4b3c", "dashArray": "6 8", "dashOffset": null, "fill": false, "fillColor": "#5e4b3c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+            poly_line_f153aae75f1ca7804321d8be62f566e3.bindTooltip(
+                `<div>
+                     4. Kainuu–Koillismaa to Inari
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4735a2f5c43c8afa1450caf58118d96e = L.circleMarker(
+                [64.1, 28.7],
+                {"bubblingMouseEvents": true, "color": "#5e4b3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5e4b3c", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_93b6aa50ee35ff5f79d08d842c51b6da = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_18db7ef7417990e5b0a9d696d7665091 = $(`<div id="html_18db7ef7417990e5b0a9d696d7665091" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Kajaani region</h4>             <b>Period:</b> c. 1000 BCE–500 CE<br>             <b>Lifestyle adaptation:</b> Boreal forest hunting, fishing, small‑scale reindeer<br>             <b>Why Sámi moved here:</b> Dense taiga with abundant game; no specific historical reason documented.<br>             <b>Interaction with Nordic people:</b> Low‑intensity contact with Finnish settlers; Sámi traded furs for metal tools.         </div>         </div>`)[0];
+                popup_93b6aa50ee35ff5f79d08d842c51b6da.setContent(html_18db7ef7417990e5b0a9d696d7665091);
+            
+        
+
+        circle_marker_4735a2f5c43c8afa1450caf58118d96e.bindPopup(popup_93b6aa50ee35ff5f79d08d842c51b6da)
+        ;
+
+        
+    
+    
+            circle_marker_4735a2f5c43c8afa1450caf58118d96e.bindTooltip(
+                `<div>
+                     Kajaani region
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1f870968541509f91c89e0d96420afe2 = L.circleMarker(
+                [66.3, 29.5],
+                {"bubblingMouseEvents": true, "color": "#5e4b3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5e4b3c", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_43162406d762bbcc9f15544c89f6b527 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_853a0b7ffc98b1563be95715e892246a = $(`<div id="html_853a0b7ffc98b1563be95715e892246a" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Kuusamo</h4>             <b>Period:</b> c. 500–1500 CE<br>             <b>Lifestyle adaptation:</b> Taiga reindeer herding, hunting, trapping<br>             <b>Why Sámi moved here:</b> Migration of wild reindeer herds; good pasture land.<br>             <b>Interaction with Nordic people:</b> Occasional clashes with Finnish and Karelian settlers; Sámi often retreated northward.         </div>         </div>`)[0];
+                popup_43162406d762bbcc9f15544c89f6b527.setContent(html_853a0b7ffc98b1563be95715e892246a);
+            
+        
+
+        circle_marker_1f870968541509f91c89e0d96420afe2.bindPopup(popup_43162406d762bbcc9f15544c89f6b527)
+        ;
+
+        
+    
+    
+            circle_marker_1f870968541509f91c89e0d96420afe2.bindTooltip(
+                `<div>
+                     Kuusamo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3c73c4244e8439a0959dca1db89db127 = L.circleMarker(
+                [68.5, 28.5],
+                {"bubblingMouseEvents": true, "color": "#5e4b3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5e4b3c", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_4dfab483bfcc6c64b3786cd8ddc8ea36 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_82f96bb8c87a3844e3630da036ca4ab6 = $(`<div id="html_82f96bb8c87a3844e3630da036ca4ab6" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Inari / Utsjoki</h4>             <b>Period:</b> c. 1500–present<br>             <b>Lifestyle adaptation:</b> Arctic reindeer nomadism, lake fishing, Sámi culture centre<br>             <b>Why Sámi moved here:</b> Remote northern area with minimal agricultural competition; became a refuge for Sámi culture.<br>             <b>Interaction with Nordic people:</b> Limited interaction until 19th‑century state building; then assimilation policies, but also revival of Sámi identity.         </div>         </div>`)[0];
+                popup_4dfab483bfcc6c64b3786cd8ddc8ea36.setContent(html_82f96bb8c87a3844e3630da036ca4ab6);
+            
+        
+
+        circle_marker_3c73c4244e8439a0959dca1db89db127.bindPopup(popup_4dfab483bfcc6c64b3786cd8ddc8ea36)
+        ;
+
+        
+    
+    
+            circle_marker_3c73c4244e8439a0959dca1db89db127.bindTooltip(
+                `<div>
+                     Inari / Utsjoki
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_58bd87de3e90c72c088261279fa174cb = L.polyline(
+                [[65.0, 11.8], [65.8, 12.4], [66.5, 13.0], [67.3, 14.4], [68.2, 14.6], [69.0, 15.7], [69.7, 18.9]],
+                {"bubblingMouseEvents": true, "color": "#d1495b", "dashArray": "6 8", "dashOffset": null, "fill": false, "fillColor": "#d1495b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+            poly_line_58bd87de3e90c72c088261279fa174cb.bindTooltip(
+                `<div>
+                     5. Atlantic coast route (Hålogaland–Troms)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3148d91bfd80b70debf7f3165e00960b = L.circleMarker(
+                [65.0, 11.8],
+                {"bubblingMouseEvents": true, "color": "#d1495b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d1495b", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_e70a65e77d069ad544c322120532e387 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7ef79434a5e47d69fd2cf269a8c6b119 = $(`<div id="html_7ef79434a5e47d69fd2cf269a8c6b119" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Namdalen</h4>             <b>Period:</b> c. 500–1000 CE<br>             <b>Lifestyle adaptation:</b> Coastal fishing, boat building, trade with Norse<br>             <b>Why Sámi moved here:</b> Rich fisheries and sheltered harbours; proximity to Norse trade routes.<br>             <b>Interaction with Nordic people:</b> Sámi specialised as boat builders and fishermen; often intermarried with Norse coastal farmers.         </div>         </div>`)[0];
+                popup_e70a65e77d069ad544c322120532e387.setContent(html_7ef79434a5e47d69fd2cf269a8c6b119);
+            
+        
+
+        circle_marker_3148d91bfd80b70debf7f3165e00960b.bindPopup(popup_e70a65e77d069ad544c322120532e387)
+        ;
+
+        
+    
+    
+            circle_marker_3148d91bfd80b70debf7f3165e00960b.bindTooltip(
+                `<div>
+                     Namdalen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2803b49381c552265b9b638080008b4b = L.circleMarker(
+                [67.3, 14.4],
+                {"bubblingMouseEvents": true, "color": "#d1495b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d1495b", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_21fa3a16ae268982f9512d74b7f40452 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d0b417e8d588c7ca5b10c92a149fbe07 = $(`<div id="html_d0b417e8d588c7ca5b10c92a149fbe07" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Bodø</h4>             <b>Period:</b> c. 1000–1500 CE<br>             <b>Lifestyle adaptation:</b> Sea‑Sámi – cod fishing, sheep, small‑scale farming<br>             <b>Why Sámi moved here:</b> Cod fisheries and mild coastal climate allowed combined farming and fishing.<br>             <b>Interaction with Nordic people:</b> Norse and Sámi lived side by side; shared fishing grounds; Norse church taxed both groups.         </div>         </div>`)[0];
+                popup_21fa3a16ae268982f9512d74b7f40452.setContent(html_d0b417e8d588c7ca5b10c92a149fbe07);
+            
+        
+
+        circle_marker_2803b49381c552265b9b638080008b4b.bindPopup(popup_21fa3a16ae268982f9512d74b7f40452)
+        ;
+
+        
+    
+    
+            circle_marker_2803b49381c552265b9b638080008b4b.bindTooltip(
+                `<div>
+                     Bodø
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_353c900574f3f92b0d5b36874c433dd3 = L.circleMarker(
+                [69.0, 15.7],
+                {"bubblingMouseEvents": true, "color": "#d1495b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d1495b", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_1bc361bdd2b8168da153ebd0f43c9b1a = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0bda1ffd64e297d418bef9766b99a3ea = $(`<div id="html_0bda1ffd64e297d418bef9766b99a3ea" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Senja / Tromsø</h4>             <b>Period:</b> c. 1500–present<br>             <b>Lifestyle adaptation:</b> Arctic fjord fishing, reindeer herding, modern Sámi settlements<br>             <b>Why Sámi moved here:</b> Abundant fish and reindeer grazing; accessible to both sea and mountain resources.<br>             <b>Interaction with Nordic people:</b> Trade with Norwegian merchants; later forced Norwegianisation (1850–1950) but strong Sámi revival today.         </div>         </div>`)[0];
+                popup_1bc361bdd2b8168da153ebd0f43c9b1a.setContent(html_0bda1ffd64e297d418bef9766b99a3ea);
+            
+        
+
+        circle_marker_353c900574f3f92b0d5b36874c433dd3.bindPopup(popup_1bc361bdd2b8168da153ebd0f43c9b1a)
+        ;
+
+        
+    
+    
+            circle_marker_353c900574f3f92b0d5b36874c433dd3.bindTooltip(
+                `<div>
+                     Senja / Tromsø
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_c0da8c7adf4d4852dcc0f5a079f7875d = L.polyline(
+                [[63.9, 17.0], [65.2, 18.5], [66.5, 19.5], [67.5, 20.5], [68.4, 22.2], [69.2, 23.3]],
+                {"bubblingMouseEvents": true, "color": "#7b2d26", "dashArray": "6 8", "dashOffset": null, "fill": false, "fillColor": "#7b2d26", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+            poly_line_c0da8c7adf4d4852dcc0f5a079f7875d.bindTooltip(
+                `<div>
+                     6. Inland river path (Torne, Lule, Pite)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fa142ffedec3d5f95406950f5c913661 = L.circleMarker(
+                [65.2, 18.5],
+                {"bubblingMouseEvents": true, "color": "#7b2d26", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7b2d26", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_16966c0bda80200cffdfc83f8f6085ec = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_5d399bac73c1ef386d07947996205a72 = $(`<div id="html_5d399bac73c1ef386d07947996205a72" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Storuman</h4>             <b>Period:</b> c. 1000 BCE–500 CE<br>             <b>Lifestyle adaptation:</b> Forest Sámi – hunting, fishing in large lakes<br>             <b>Why Sámi moved here:</b> Large lake systems with fish and wild reindeer migration routes.<br>             <b>Interaction with Nordic people:</b> Limited contact with early Swedish settlers; mostly self‑sufficient.         </div>         </div>`)[0];
+                popup_16966c0bda80200cffdfc83f8f6085ec.setContent(html_5d399bac73c1ef386d07947996205a72);
+            
+        
+
+        circle_marker_fa142ffedec3d5f95406950f5c913661.bindPopup(popup_16966c0bda80200cffdfc83f8f6085ec)
+        ;
+
+        
+    
+    
+            circle_marker_fa142ffedec3d5f95406950f5c913661.bindTooltip(
+                `<div>
+                     Storuman
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c2cdcc120744e8a0af671261673306aa = L.circleMarker(
+                [67.5, 20.5],
+                {"bubblingMouseEvents": true, "color": "#7b2d26", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7b2d26", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_3645acf447f88334b7fb153b5aaed1b6 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_78eedfd350bddc8b6c39b443883dee37 = $(`<div id="html_78eedfd350bddc8b6c39b443883dee37" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Gällivare</h4>             <b>Period:</b> c. 1000–1600 CE<br>             <b>Lifestyle adaptation:</b> Mountain Sámi – intensive reindeer herding, seasonal migration<br>             <b>Why Sámi moved here:</b> Shift to large‑scale reindeer pastoralism due to demand for meat and hides from Swedish markets.<br>             <b>Interaction with Nordic people:</b> Sámi became suppliers to Swedish mining towns; taxation and land encroachment increased.         </div>         </div>`)[0];
+                popup_3645acf447f88334b7fb153b5aaed1b6.setContent(html_78eedfd350bddc8b6c39b443883dee37);
+            
+        
+
+        circle_marker_c2cdcc120744e8a0af671261673306aa.bindPopup(popup_3645acf447f88334b7fb153b5aaed1b6)
+        ;
+
+        
+    
+    
+            circle_marker_c2cdcc120744e8a0af671261673306aa.bindTooltip(
+                `<div>
+                     Gällivare
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0df450859d2a8d722bc45c7e59f9fea1 = L.circleMarker(
+                [69.2, 23.3],
+                {"bubblingMouseEvents": true, "color": "#7b2d26", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7b2d26", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_1345e5cf82f0d699de166ebf1b17bfbc = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_8419def923a1562a9c4998df5b59de14 = $(`<div id="html_8419def923a1562a9c4998df5b59de14" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Kautokeino</h4>             <b>Period:</b> c. 1600–present<br>             <b>Lifestyle adaptation:</b> Reindeer pastoralism, Sámi parliament, winter market<br>             <b>Why Sámi moved here:</b> Central location for reindeer migration between summer coast and winter inland; became cultural hub.<br>             <b>Interaction with Nordic people:</b> Site of 1852 Kautokeino uprising against Norwegian authorities; today centre of Sámi political and cultural life.         </div>         </div>`)[0];
+                popup_1345e5cf82f0d699de166ebf1b17bfbc.setContent(html_8419def923a1562a9c4998df5b59de14);
+            
+        
+
+        circle_marker_0df450859d2a8d722bc45c7e59f9fea1.bindPopup(popup_1345e5cf82f0d699de166ebf1b17bfbc)
+        ;
+
+        
+    
+    
+            circle_marker_0df450859d2a8d722bc45c7e59f9fea1.bindTooltip(
+                `<div>
+                     Kautokeino
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_4d19ed77b1d5f061dab1d90aa860a204 = L.polyline(
+                [[61.2, 9.5], [62.3, 10.6], [62.9, 11.8], [63.5, 10.9], [64.6, 12.5], [65.4, 13.6]],
+                {"bubblingMouseEvents": true, "color": "#3a7d44", "dashArray": "6 8", "dashOffset": null, "fill": false, "fillColor": "#3a7d44", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+            poly_line_4d19ed77b1d5f061dab1d90aa860a204.bindTooltip(
+                `<div>
+                     7. Norwegian inland mountain trail (Dovre–Røros–Trondheim)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1220707a7568725dd56ac2507ba98809 = L.circleMarker(
+                [62.3, 10.6],
+                {"bubblingMouseEvents": true, "color": "#3a7d44", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3a7d44", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_7c6bac1d1559148db0ae0fe9665e0ef8 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b325b2b656a81335d15d1443bc17342d = $(`<div id="html_b325b2b656a81335d15d1443bc17342d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Rondane</h4>             <b>Period:</b> c. 1500 BCE–500 CE<br>             <b>Lifestyle adaptation:</b> Mountain hunting, reindeer trapping pits<br>             <b>Why Sámi moved here:</b> Wild reindeer herds migrated through mountain passes; pitfall trapping was highly effective.<br>             <b>Interaction with Nordic people:</b> No permanent Norse settlements until later; Sámi used area seasonally.         </div>         </div>`)[0];
+                popup_7c6bac1d1559148db0ae0fe9665e0ef8.setContent(html_b325b2b656a81335d15d1443bc17342d);
+            
+        
+
+        circle_marker_1220707a7568725dd56ac2507ba98809.bindPopup(popup_7c6bac1d1559148db0ae0fe9665e0ef8)
+        ;
+
+        
+    
+    
+            circle_marker_1220707a7568725dd56ac2507ba98809.bindTooltip(
+                `<div>
+                     Rondane
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aea5a8b33f759667d32973a83534f33b = L.circleMarker(
+                [62.9, 11.8],
+                {"bubblingMouseEvents": true, "color": "#3a7d44", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3a7d44", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_943454997b27dcf78bf0f5fdb9e0489c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_bb890d83a17fe588d497098d183ec96d = $(`<div id="html_bb890d83a17fe588d497098d183ec96d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Røros</h4>             <b>Period:</b> c. 1000–1700 CE<br>             <b>Lifestyle adaptation:</b> South Sámi – reindeer herding, copper trade with Norse<br>             <b>Why Sámi moved here:</b> Proximity to Røros copper mines created market for reindeer products and transport services.<br>             <b>Interaction with Nordic people:</b> Sámi worked as transporters and suppliers for the mining town; cultural exchange and some conflict over land.         </div>         </div>`)[0];
+                popup_943454997b27dcf78bf0f5fdb9e0489c.setContent(html_bb890d83a17fe588d497098d183ec96d);
+            
+        
+
+        circle_marker_aea5a8b33f759667d32973a83534f33b.bindPopup(popup_943454997b27dcf78bf0f5fdb9e0489c)
+        ;
+
+        
+    
+    
+            circle_marker_aea5a8b33f759667d32973a83534f33b.bindTooltip(
+                `<div>
+                     Røros
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b94e6c77558900c5b99913e62554c7f6 = L.circleMarker(
+                [65.4, 13.6],
+                {"bubblingMouseEvents": true, "color": "#3a7d44", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3a7d44", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_16a09b6df1fa20c33a601153b44b0dcd = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_4e453b90f82379e67bbe71d19898abf8 = $(`<div id="html_4e453b90f82379e67bbe71d19898abf8" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Mosjøen</h4>             <b>Period:</b> c. 1700–present<br>             <b>Lifestyle adaptation:</b> Reindeer herding, coastal‑inland seasonal movement<br>             <b>Why Sámi moved here:</b> Traditional migration route between summer coast and winter inland pastures.<br>             <b>Interaction with Nordic people:</b> Norwegian farmers moved into valleys; Sámi retained rights to grazing, but disputes were frequent.         </div>         </div>`)[0];
+                popup_16a09b6df1fa20c33a601153b44b0dcd.setContent(html_4e453b90f82379e67bbe71d19898abf8);
+            
+        
+
+        circle_marker_b94e6c77558900c5b99913e62554c7f6.bindPopup(popup_16a09b6df1fa20c33a601153b44b0dcd)
+        ;
+
+        
+    
+    
+            circle_marker_b94e6c77558900c5b99913e62554c7f6.bindTooltip(
+                `<div>
+                     Mosjøen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_a92dc142d3998e1c54836d91319f306b = L.polyline(
+                [[64.9, 30.0], [66.5, 29.8], [67.6, 30.5], [68.8, 31.0], [69.4, 33.2], [69.0, 35.0]],
+                {"bubblingMouseEvents": true, "color": "#4a4e69", "dashArray": "6 8", "dashOffset": null, "fill": false, "fillColor": "#4a4e69", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+            poly_line_a92dc142d3998e1c54836d91319f306b.bindTooltip(
+                `<div>
+                     8. Kola Peninsula route (eastern Sámi migration)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_92c33c5dd34e9cad9e2ed4e8439a862d = L.circleMarker(
+                [66.5, 29.8],
+                {"bubblingMouseEvents": true, "color": "#4a4e69", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4a4e69", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_56d16da7456574c9183936b4d5949e68 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_48a36d535cc0cc9600c309357e46cf34 = $(`<div id="html_48a36d535cc0cc9600c309357e46cf34" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Salla</h4>             <b>Period:</b> c. 1000 BCE–500 CE<br>             <b>Lifestyle adaptation:</b> Taiga reindeer hunting, fishing, small‑scale herding<br>             <b>Why Sámi moved here:</b> Rich taiga with game and fish; no specific historical reason documented.<br>             <b>Interaction with Nordic people:</b> Low contact with Slavic or Finnish settlers until 1600s.         </div>         </div>`)[0];
+                popup_56d16da7456574c9183936b4d5949e68.setContent(html_48a36d535cc0cc9600c309357e46cf34);
+            
+        
+
+        circle_marker_92c33c5dd34e9cad9e2ed4e8439a862d.bindPopup(popup_56d16da7456574c9183936b4d5949e68)
+        ;
+
+        
+    
+    
+            circle_marker_92c33c5dd34e9cad9e2ed4e8439a862d.bindTooltip(
+                `<div>
+                     Salla
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_feb9da200dcf384d85445c5f00619eb0 = L.circleMarker(
+                [68.8, 31.0],
+                {"bubblingMouseEvents": true, "color": "#4a4e69", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4a4e69", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_13ac11014a22af38b5c61adb837c7341 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_47a7a8b7d54a9679196b775fc69fdc01 = $(`<div id="html_47a7a8b7d54a9679196b775fc69fdc01" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Murmansk region</h4>             <b>Period:</b> c. 1000–1500 CE<br>             <b>Lifestyle adaptation:</b> Skolt Sámi – river fishing, reindeer, Russian trade<br>             <b>Why Sámi moved here:</b> River systems and access to Russian trading posts (e.g., Kola).<br>             <b>Interaction with Nordic people:</b> Skolt Sámi paid tribute to Novgorod and later Muscovy; adopted Orthodox Christianity.         </div>         </div>`)[0];
+                popup_13ac11014a22af38b5c61adb837c7341.setContent(html_47a7a8b7d54a9679196b775fc69fdc01);
+            
+        
+
+        circle_marker_feb9da200dcf384d85445c5f00619eb0.bindPopup(popup_13ac11014a22af38b5c61adb837c7341)
+        ;
+
+        
+    
+    
+            circle_marker_feb9da200dcf384d85445c5f00619eb0.bindTooltip(
+                `<div>
+                     Murmansk region
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c147a08e24c1ac485df775e4b32ddcde = L.circleMarker(
+                [69.4, 33.2],
+                {"bubblingMouseEvents": true, "color": "#4a4e69", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4a4e69", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_52a829f44136176493bd182ea03a622e = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a433428a6ebf80d596a11c6303513f32 = $(`<div id="html_a433428a6ebf80d596a11c6303513f32" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Kola Bay</h4>             <b>Period:</b> c. 1500–present<br>             <b>Lifestyle adaptation:</b> Coastal Sámi (Ter Sámi) – salmon fishing, sealing, reindeer<br>             <b>Why Sámi moved here:</b> Rich salmon rivers and seal colonies; seasonal movement between coast and interior.<br>             <b>Interaction with Nordic people:</b> Interacted with Russian Pomor traders; later Soviet collectivisation disrupted traditional lifestyle.         </div>         </div>`)[0];
+                popup_52a829f44136176493bd182ea03a622e.setContent(html_a433428a6ebf80d596a11c6303513f32);
+            
+        
+
+        circle_marker_c147a08e24c1ac485df775e4b32ddcde.bindPopup(popup_52a829f44136176493bd182ea03a622e)
+        ;
+
+        
+    
+    
+            circle_marker_c147a08e24c1ac485df775e4b32ddcde.bindTooltip(
+                `<div>
+                     Kola Bay
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_6c54513a6233104edd817c6a442a662c = L.polyline(
+                [[60.4, 25.7], [61.5, 26.5], [62.8, 28.7], [64.4, 30.0], [65.7, 31.8], [66.8, 33.6]],
+                {"bubblingMouseEvents": true, "color": "#e09f3e", "dashArray": "6 8", "dashOffset": null, "fill": false, "fillColor": "#e09f3e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+            poly_line_6c54513a6233104edd817c6a442a662c.bindTooltip(
+                `<div>
+                     9. Southern Finland–Lake Ladoga–White Sea corridor
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_02b455c23ccffc5396aab46e889108cf = L.circleMarker(
+                [61.5, 26.5],
+                {"bubblingMouseEvents": true, "color": "#e09f3e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e09f3e", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_6f3be3d350ec67b4e42385a9ec54ac0d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e112b56c25f6217b4ef5ebcd9c86f964 = $(`<div id="html_e112b56c25f6217b4ef5ebcd9c86f964" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Mikkeli</h4>             <b>Period:</b> c. 2000–1500 BCE<br>             <b>Lifestyle adaptation:</b> Comb Ceramic culture – fishing, sealing, early forest adaptation<br>             <b>Why Sámi moved here:</b> Post‑glacial colonisation of lake‑rich areas with abundant fish and seals.<br>             <b>Interaction with Nordic people:</b> Ancestors of Sámi and Finns shared cultural traits; later differentiation occurred.         </div>         </div>`)[0];
+                popup_6f3be3d350ec67b4e42385a9ec54ac0d.setContent(html_e112b56c25f6217b4ef5ebcd9c86f964);
+            
+        
+
+        circle_marker_02b455c23ccffc5396aab46e889108cf.bindPopup(popup_6f3be3d350ec67b4e42385a9ec54ac0d)
+        ;
+
+        
+    
+    
+            circle_marker_02b455c23ccffc5396aab46e889108cf.bindTooltip(
+                `<div>
+                     Mikkeli
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b46d33e4395681643b58ebc16d786424 = L.circleMarker(
+                [64.4, 30.0],
+                {"bubblingMouseEvents": true, "color": "#e09f3e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e09f3e", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_3e432c6bfd0a6772c70d995a1c5c6bf5 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6d6daed4332e3028949ca75c6e7326a2 = $(`<div id="html_6d6daed4332e3028949ca75c6e7326a2" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Kuhmo</h4>             <b>Period:</b> c. 1000 BCE–500 CE<br>             <b>Lifestyle adaptation:</b> Forest reindeer hunting, pit‑fall trapping<br>             <b>Why Sámi moved here:</b> Dense forests with wild reindeer; seasonal movement along eskers.<br>             <b>Interaction with Nordic people:</b> Limited contact with Karelian tribes; occasional trade in furs.         </div>         </div>`)[0];
+                popup_3e432c6bfd0a6772c70d995a1c5c6bf5.setContent(html_6d6daed4332e3028949ca75c6e7326a2);
+            
+        
+
+        circle_marker_b46d33e4395681643b58ebc16d786424.bindPopup(popup_3e432c6bfd0a6772c70d995a1c5c6bf5)
+        ;
+
+        
+    
+    
+            circle_marker_b46d33e4395681643b58ebc16d786424.bindTooltip(
+                `<div>
+                     Kuhmo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_833aeb0677e16996b213ff244621a21b = L.circleMarker(
+                [66.8, 33.6],
+                {"bubblingMouseEvents": true, "color": "#e09f3e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e09f3e", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_9c744645b28cbbf9f56df495a1f9ffbe = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_9cd4e5d68f1182634a298e91033c5d30 = $(`<div id="html_9cd4e5d68f1182634a298e91033c5d30" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">White Sea coast</h4>             <b>Period:</b> c. 500–1500 CE<br>             <b>Lifestyle adaptation:</b> Coastal Sámi – seal hunting, fishing, trade with Pomors<br>             <b>Why Sámi moved here:</b> Rich marine resources and trade opportunities with Russian Pomors.<br>             <b>Interaction with Nordic people:</b> Sámi exchanged furs, fish, and seal oil for grain, cloth, and metal goods; some intermarriage.         </div>         </div>`)[0];
+                popup_9c744645b28cbbf9f56df495a1f9ffbe.setContent(html_9cd4e5d68f1182634a298e91033c5d30);
+            
+        
+
+        circle_marker_833aeb0677e16996b213ff244621a21b.bindPopup(popup_9c744645b28cbbf9f56df495a1f9ffbe)
+        ;
+
+        
+    
+    
+            circle_marker_833aeb0677e16996b213ff244621a21b.bindTooltip(
+                `<div>
+                     White Sea coast
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_f82c219224e44b8db732d52386d71e6a = L.polyline(
+                [[68.5, 25.0], [69.0, 25.7], [69.5, 26.5], [70.0, 27.5], [70.5, 28.0]],
+                {"bubblingMouseEvents": true, "color": "#7f4f24", "dashArray": "6 8", "dashOffset": null, "fill": false, "fillColor": "#7f4f24", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+            poly_line_f82c219224e44b8db732d52386d71e6a.bindTooltip(
+                `<div>
+                     10. Finnmark plateau – core Sámi area
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_10ad6bde7b9350fd0dda5f08a60121cc = L.circleMarker(
+                [69.0, 25.7],
+                {"bubblingMouseEvents": true, "color": "#7f4f24", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f4f24", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_590423f54cbb2dcecaf40c69fe81097f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_5a88cac23567dababf4562d120ade632 = $(`<div id="html_5a88cac23567dababf4562d120ade632" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Karasjok</h4>             <b>Period:</b> c. 1500–present<br>             <b>Lifestyle adaptation:</b> Sámi heartland – reindeer herding, Sámi language, traditional dress<br>             <b>Why Sámi moved here:</b> Central location for reindeer migration and Sámi political organisation; avoided Norwegian farming colonisation.<br>             <b>Interaction with Nordic people:</b> Sámi parliament established here in 1989; historical tensions with Norwegian assimilation policies.         </div>         </div>`)[0];
+                popup_590423f54cbb2dcecaf40c69fe81097f.setContent(html_5a88cac23567dababf4562d120ade632);
+            
+        
+
+        circle_marker_10ad6bde7b9350fd0dda5f08a60121cc.bindPopup(popup_590423f54cbb2dcecaf40c69fe81097f)
+        ;
+
+        
+    
+    
+            circle_marker_10ad6bde7b9350fd0dda5f08a60121cc.bindTooltip(
+                `<div>
+                     Karasjok
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cdcc05b1d384d8ce3feae021a100867f = L.circleMarker(
+                [70.0, 27.5],
+                {"bubblingMouseEvents": true, "color": "#7f4f24", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f4f24", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+    
+        var popup_62d37d049846f6f76268803a34cea7c8 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_cafc3990db1ff914d530b050d4b709fd = $(`<div id="html_cafc3990db1ff914d530b050d4b709fd" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', sans-serif; max-width:320px; line-height:1.4;">             <h4 style="margin:0 0 6px; color:#1e3a5f;">Tana river</h4>             <b>Period:</b> c. 1600–present<br>             <b>Lifestyle adaptation:</b> River Sámi – salmon fishing, reindeer summer pastures<br>             <b>Why Sámi moved here:</b> One of Europe’s best salmon rivers; traditional fishing rights.<br>             <b>Interaction with Nordic people:</b> Fishing rights disputes with Norwegian and Finnish authorities; Sámi fought for legal recognition.         </div>         </div>`)[0];
+                popup_62d37d049846f6f76268803a34cea7c8.setContent(html_cafc3990db1ff914d530b050d4b709fd);
+            
+        
+
+        circle_marker_cdcc05b1d384d8ce3feae021a100867f.bindPopup(popup_62d37d049846f6f76268803a34cea7c8)
+        ;
+
+        
+    
+    
+            circle_marker_cdcc05b1d384d8ce3feae021a100867f.bindTooltip(
+                `<div>
+                     Tana river
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            tile_layer_30c09dade20ee06b56ca510595ca646e.addTo(map_a4c50ec59f03620fe9f42b03460a7b16);
+        
+</script>
+</html>
